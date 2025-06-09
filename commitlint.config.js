@@ -19,7 +19,7 @@ module.exports = {
       ],
     ],
     'type-empty': [2, 'never'],
-    'scope-empty': [2, 'never'],
+    'scope-empty': [1, 'never'],
     'subject-empty': [2, 'never'],
     'subject-case': [2, 'never', ['start-case', 'pascal-case', 'upper-case']],
     'subject-full-stop': [2, 'never', '.'],
