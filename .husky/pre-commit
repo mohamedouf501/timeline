@@ -1,0 +1,22 @@
+echo "🔍 Running Prettier check..."
+npx prettier --check .
+
+if [ $? -ne 0 ]; then
+echo "❌ Prettier checks failed."
+exit 1
+fi
+
+echo "🔍 Running ESLint check..."
+npx eslint --fix .
+
+if [ $? -ne 0 ]; then
+echo "❌ ESLint checks failed."
+fi
+
+echo "🔍 Running lint-staged..."
+npx lint-staged
+
+if [ $? -ne 0 ]; then
+echo "❌ lint-staged checks failed."
+exit 1
+fi

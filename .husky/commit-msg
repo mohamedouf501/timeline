@@ -1,0 +1,17 @@
+#!/bin/sh
+ 
+echo "📝 Checking commit message format using commitlint..."
+
+npx --no -- commitlint --edit "$1"
+if [ $? -ne 0 ]; then
+  echo "❌ Commit message does not follow Conventional Commits!"
+  echo "💡 Example formats:"
+  echo "   ➤ feat: add timeline creation API"
+  echo "   ➤ fix: resolve event timestamp bug"
+  echo "   ➤ chore: update dependencies"
+  echo ""
+  echo "🚫 Commit rejected!"
+  exit 1
+fi
+
+echo "✅ Commit message is valid. Proceeding with commit..."
