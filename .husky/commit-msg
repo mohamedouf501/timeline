@@ -2,6 +2,14 @@
  
 echo "📝 Checking commit message format using commitlint..."
 
+COMMIT_MSG=$(cat "$1")
+
+if echo "$COMMIT_MSG" | grep -q '\[skip ci\]'; then
+  echo "⚠️  Skipping commitlint for semantic-release commit."
+  exit 0
+fi
+
+
 npx --no -- commitlint --edit "$1"
 if [ $? -ne 0 ]; then
   echo "❌ Commit message does not follow Conventional Commits!"
