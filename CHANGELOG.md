@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/mohamedouf501/timeline/compare/v1.2.0...v1.3.0) (2025-06-09)
+
+### Features
+
+- add support for skipping commitlint on semantic-release commits ([93c7db6](https://github.com/mohamedouf501/timeline/commit/93c7db65e3dbebbc2f5eeb48d79b98f762cb19e6))
+- update dependabot configuration for npm and improve commit message checks ([bc0cbe0](https://github.com/mohamedouf501/timeline/commit/bc0cbe04e533d989f6a128f6710711f31f1a693d))
+
 # [1.2.0](https://github.com/mohamedouf501/timeline/compare/v1.1.0...v1.2.0) (2025-06-09)
 
 ### Features
