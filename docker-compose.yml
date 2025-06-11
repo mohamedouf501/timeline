@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:alpine
+    container_name: my_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ouf
+      POSTGRES_PASSWORD: ouf
+      POSTGRES_HOST_AUTH_METHOD: md5
+      POSTGRES_DB: timeline_db
+    ports:
+      - '5400:5432'
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
