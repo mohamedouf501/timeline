@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { SendFriendRequestDto } from '../../dtos/send-friend-request.dto';
-import { RespondFriendRequestDto } from '../../dtos/respond-friend-request.dto';
-import { IFriendshipRepository } from '../../repositories/friendship.repository.interface';
+import { RespondFriendRequestDto } from '../dtos/respond-friend-request.dto';
+import { SendFriendRequestDto } from '../dtos/send-friend-request.dto';
+import { IFriendshipRepository } from '../repositories/friendship.repository.interface';
 
 @Injectable()
 export class FriendshipService {

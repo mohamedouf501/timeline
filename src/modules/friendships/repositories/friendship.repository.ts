@@ -15,12 +15,16 @@ export class FriendshipRepository
     requesterId: number,
     addresseeId: number,
   ): Promise<FriendshipEntity> {
-    return {
-      id: 1,
-      requesterId,
-      addresseeId,
-      status: FriendshipStatus.PENDING,
-    };
+    // Simulate creating a friendship
+    const friendship = new FriendshipEntity();
+    friendship.requesterId = requesterId;
+    friendship.addresseeId = addresseeId;
+    friendship.status = FriendshipStatus.PENDING;
+
+    console.log(
+      `Creating friendship from user ${requesterId} to user ${addresseeId}`,
+    );
+    return Promise.resolve(friendship);
   }
 
   async updateStatus(
