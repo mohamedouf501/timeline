@@ -5,4 +5,9 @@ import { UpdatePostDto } from '../dtos/update-post.dto';
 export interface IPostRepository {
   createPost(data: CreatePostDto): Promise<PostEntity>;
   updatePost(data: UpdatePostDto): Promise<void>;
+  getUserTimeline(
+    userId: number,
+    limit: number,
+    page: number,
+  ): Promise<PostEntity[]>;
 }
