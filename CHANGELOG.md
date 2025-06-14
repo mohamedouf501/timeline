@@ -1,3 +1,9 @@
+# [1.4.0](https://github.com/mohamedouf501/timeline/compare/v1.3.0...v1.4.0) (2025-06-14)
+
+### Features
+
+- refactor commit-analyzer plugin configuration for clarity ([52a7e2e](https://github.com/mohamedouf501/timeline/commit/52a7e2eadf23899e17a8cd57afd706948bb3071b))
+
 # [1.3.0](https://github.com/mohamedouf501/timeline/compare/v1.2.0...v1.3.0) (2025-06-09)
 
 ### Features

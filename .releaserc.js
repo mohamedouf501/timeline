@@ -1,7 +1,16 @@
 module.exports = {
   branches: ['main'],
   plugins: [
-    '@semantic-release/commit-analyzer',
+    [
+      '@semantic-release/commit-analyzer',
+      {
+        preset: 'conventionalcommits',
+        parserOpts: {
+          mergePattern: /^Merge pull request #(\d+) from (.*)$/,
+          mergeCorrespondence: ['id', 'source'],
+        },
+      },
+    ],
     '@semantic-release/release-notes-generator',
     [
       '@semantic-release/changelog',
@@ -12,7 +21,7 @@ module.exports = {
     [
       '@semantic-release/npm',
       {
-        npmPublish: false, // Set to true if you want to publish to npm
+        npmPublish: false,
       },
     ],
     [
