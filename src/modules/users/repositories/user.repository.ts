@@ -22,4 +22,17 @@ export class UserRepository implements IUserRepository {
       select: ['id', 'email', 'name'],
     });
   }
+
+  async findById(id: number): Promise<UserEntity | null> {
+    return this.repo.findOne({
+      where: { id },
+      select: ['id', 'email', 'name'],
+    });
+  }
+  async findAll(): Promise<UserEntity[]> {
+    return this.repo.find({
+      select: ['id', 'email', 'name'],
+      relations: ['posts'],
+    });
+  }
 }

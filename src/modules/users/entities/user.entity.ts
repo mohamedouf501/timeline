@@ -1,4 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToMany,
+  UpdateDateColumn,
+  CreateDateColumn,
+} from 'typeorm';
 import { FriendshipEntity } from '../../friendships/entities/friendship.entity';
 import { PostEntity } from '../../posts/entities/post.entity';
 
@@ -15,6 +22,11 @@ export class UserEntity {
 
   @Column()
   password: string;
+
+  @CreateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  created_at: Date;
+  @UpdateDateColumn({ type: 'timestamp', onUpdate: 'CURRENT_TIMESTAMP' })
+  updated_at: Date;
 
   @OneToMany(() => FriendshipEntity, (friendship) => friendship.requester)
   sentFriendRequests: FriendshipEntity[];
