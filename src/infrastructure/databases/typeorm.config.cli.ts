@@ -1,9 +1,9 @@
 import { DataSource } from 'typeorm';
 import * as dotenv from 'dotenv';
 
-dotenv.config({
-  path: '.env.development',
-});
+if (process.env.NODE_ENV === 'development') {
+  dotenv.config();
+}
 
 export default new DataSource({
   type: 'postgres',
